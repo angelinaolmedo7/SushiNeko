@@ -1,5 +1,10 @@
 import SpriteKit
 
+/* Tracking enum for game state */
+enum GameState {
+    case title, ready, playing, gameOver
+}
+
 /* Tracking enum for use with character and sushi side */
 enum Side {
     case left, right, none
@@ -12,6 +17,8 @@ class GameScene: SKScene {
     var character: Character!
     /* Sushi tower array */
     var sushiTower: [SushiPiece] = []
+    /* Game management */
+    var state: GameState = .title
     
     override func didMove(to view: SKView) {
         super.didMove(to: view)
