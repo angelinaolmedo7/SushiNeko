@@ -14,7 +14,9 @@ class Character: SKSpriteNode {
                 xScale = -1
                 position.x = 252
             }
-            /* Run the punch action */
+            /* Run the punch action, but remove all actions first
+             in case they are left incomplete */
+            removeAllActions()
             run(punch)
         }
     }
